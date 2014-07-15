@@ -15,14 +15,14 @@
     "limit",
     "characters"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
-    "name": "Matías Lescano ",
+    "name": "Matías Lescano",
     "url": "https://github.com/mjlescano"
   },
   "maintainers": [
     {
-      "name": "Matías Lescano ",
+      "name": "Matías Lescano",
       "url": "https://github.com/mjlescano"
     }
   ],
@@ -35,7 +35,7 @@
   "bugs": "https://github.com/mjlescano/freeChars/issues",
   "homepage": "http://mjlescano.github.io/freeChars",
   "docs": "https://github.com/mjlescano/freeChars#readme",
-  "download": "https://github.com/mjlescano/freeChars/archive/master.zip",
+  "download": "https://raw.githubusercontent.com/mjlescano/freeChars/master/src/jquery.freeChars.js",
   "dependencies": {
     "jquery": ">=1.9"
   }
