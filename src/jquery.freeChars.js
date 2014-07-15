@@ -47,7 +47,11 @@
 
       this.value = newValue
       this.count = newValue.length
-      requestAnimationFrame(this.countTick)
+      if( window.requestAnimationFrame ) {
+        requestAnimationFrame(this.countTick)
+      } else {
+        this.countTick()
+      }
     },
 
     countTick: function(){
