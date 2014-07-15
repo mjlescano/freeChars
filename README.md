@@ -31,8 +31,8 @@ $('textarea').freeChars({
 ```
 
 ### Options
-* `maxLength` (Integer)(default: `140`) -- number of characters to count.
-* `limit`:  (Boolean)(default: `true`) -- if it has to apply the limit, if false, negative values will be given to 'available' argument.
+* `maxLength` (Integer)(default: `140`) -- Number of characters to count.
+* `limit`:  (Boolean)(default: `true`) -- Apply maxlength property. If false, negative values will be given to 'available' argument.
 * `onUpdate`: (Function)(optional) -- Function to be called everytime the textarea changes the value.
 * `update`: (jQuery element)(optional) -- The content of this element will be setted with the remaining characters.
 
