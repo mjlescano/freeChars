@@ -1,0 +1,42 @@
+{
+  "name": "freeChars",
+  "title": "Jquery freeChars Plugin",
+  "description": "Minimal plugin to show available chars on textarea's. Also works as maxlength attribute polyfill.",
+  "keywords": [
+    "jquery",
+    "plugins",
+    "textarea",
+    "input",
+    "maxlength",
+    "max",
+    "maximum",
+    "attribute",
+    "restrict",
+    "limit",
+    "characters"
+  ],
+  "version": "0.1.0",
+  "author": {
+    "name": "Matías Lescano ",
+    "url": "https://github.com/mjlescano"
+  },
+  "maintainers": [
+    {
+      "name": "Matías Lescano ",
+      "url": "https://github.com/mjlescano"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/mjlescano/freeChars/issues",
+  "homepage": "http://mjlescano.github.io/freeChars",
+  "docs": "https://github.com/mjlescano/freeChars#readme",
+  "download": "https://github.com/mjlescano/freeChars/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.9"
+  }
+}

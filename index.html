@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>FreeChars</title>
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="lib/rAF.js"></script>
+  <script type="text/javascript" src="src/jquery.freeChars.js"></script>
+</head>
+<body>
+  <textarea maxlength="30"></textarea>
+  <p>
+    <span>Available:</span>
+    <span id="count"></span>
+  </p>
+  <script type="text/javascript">
+    var $count = $('#count')
+    $('textarea').freeChars({ update: $count })
+  </script>
+</body>
+</html>
