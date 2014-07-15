@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Freechars by mjlescano</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Freechars</h1>
+        <p>Available chars counter and maxlength attribute polyfill  for &lt;textarea/&gt;&#39;s</p>
+
+        <p class="view"><a href="https://github.com/mjlescano/freeChars">View the Project on GitHub <small>mjlescano/freeChars</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/mjlescano/freeChars/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mjlescano/freeChars/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mjlescano/freeChars">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a name="freechars-jquery-plugin" class="anchor" href="#freechars-jquery-plugin"><span class="octicon octicon-link"></span></a>freeChars jQuery Plugin</h2>
+
+<p>Minimal characters counter for textarea/input elements. Also works as a polyfill for "maxlength" attribute.</p>
+
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
+
+<p>Inlcude jQuery (1.9 or newer), requestAnimationFrame Polyfill if you want to be backwards compatible, and <code>jquery.freeChars.js</code>.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"lib/rAF.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//code.jquery.com/jquery-2.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"src/jquery.freeChars.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>Then simply call <code>.freeChars()</code> to initiate the plugin:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">freeChars</span><span class="p">({</span>
+  <span class="nx">update</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'span#textareaCount'</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+
+<p>You could also have a custom handler to be called when the textarea value change, will recieve two arguments, the available characters to be used and the current maxlegth value.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">freeChars</span><span class="p">({</span>
+  <span class="nx">onUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">available</span><span class="p">,</span> <span class="nx">maxlength</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'There are '</span><span class="o">+</span><span class="nx">available</span><span class="o">+</span><span class="s1">'characters left.'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The textarea can only have '</span><span class="o">+</span><span class="nx">maxlength</span><span class="o">+</span><span class="s1">' characters.'</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+
+<h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<ul>
+<li>
+<code>maxLength</code> (Integer)(default: <code>140</code>) -- number of characters to count.</li>
+<li>
+<code>limit</code>:  (Boolean)(default: <code>true</code>) -- if it has to apply the limit, if false, negative values will be given to 'available' argument.</li>
+<li>
+<code>onUpdate</code>: (Function)(optional) -- Function to be called everytime the textarea changes the value.</li>
+<li>
+<code>update</code>: (jQuery element)(optional) -- The content of this element will be setted with the remaining characters.</li>
+</ul><h3>
+<a name="full-example" class="anchor" href="#full-example"><span class="octicon octicon-link"></span></a>Full Example</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;textarea</span> <span class="na">maxlength=</span><span class="s">"30"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+  <span class="nt">&lt;span&gt;</span>Available:<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"count"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  <span class="kd">var</span> <span class="nx">$count</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'#count'</span><span class="p">)</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">freeChars</span><span class="p">({</span> <span class="nx">update</span><span class="o">:</span> <span class="nx">$count</span> <span class="p">})</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h2>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h2>
+
+<p>Developed by <a href="http://twitter.com/touteo">@mjlescano</a>. Issues and Pull Requests welcome :D</p>
+
+<h3>
+<a name="mit-licensed" class="anchor" href="#mit-licensed"><span class="octicon octicon-link"></span></a>MIT Licensed</h3>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mjlescano">mjlescano</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-52491821-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
