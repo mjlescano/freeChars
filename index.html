@@ -36,38 +36,41 @@
 <h3>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h3>
 
-<p>Inlcude jQuery (1.9 or newer), requestAnimationFrame Polyfill if you want to be backwards compatible, and <code>jquery.freeChars.js</code>.</p>
+<p>Inlcude the scripts:</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"lib/rAF.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- jQuery (1.9 or newer). --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"lib/rAF.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- (optional) window.requestAnimationFrame Polyfill for good performance on old browsers. --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"//code.jquery.com/jquery-2.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- The plugin :D --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"src/jquery.freeChars.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
-<p>Then simply call <code>.freeChars()</code> to initiate the plugin:</p>
+<p>Then simply call <code>.freeChars()</code>:</p>
 
 <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">freeChars</span><span class="p">({</span>
   <span class="nx">update</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'span#textareaCount'</span><span class="p">)</span>
 <span class="p">})</span>
 </pre></div>
 
-<p>You could also have a custom handler to be called when the textarea value change, will recieve two arguments, the available characters to be used and the current maxlegth value.</p>
+<p>You could also set a custom handler to be called when the textarea value changes. It will recieve two arguments, the available characters to be used and the current maxlegth value.</p>
 
 <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'textarea'</span><span class="p">).</span><span class="nx">freeChars</span><span class="p">({</span>
   <span class="nx">onUpdate</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">available</span><span class="p">,</span> <span class="nx">maxlength</span><span class="p">){</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'There are '</span><span class="o">+</span><span class="nx">available</span><span class="o">+</span><span class="s1">'characters left.'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'There are '</span><span class="o">+</span><span class="nx">available</span><span class="o">+</span><span class="s1">' characters left.'</span><span class="p">)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'The textarea can only have '</span><span class="o">+</span><span class="nx">maxlength</span><span class="o">+</span><span class="s1">' characters.'</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">})</span>
 </pre></div>
 
-<h2>
-<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+<h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
 
 <ul>
 <li>
-<code>maxLength</code> (Integer)(default: <code>140</code>) -- number of characters to count.</li>
+<code>maxLength</code> (Integer)(default: <code>140</code>) -- Number of characters to count.</li>
 <li>
-<code>limit</code>:  (Boolean)(default: <code>true</code>) -- if it has to apply the limit, if false, negative values will be given to 'available' argument.</li>
+<code>limit</code>:  (Boolean)(default: <code>true</code>) -- Apply maxlength property. If false, negative values will be given to 'available' argument.</li>
 <li>
 <code>onUpdate</code>: (Function)(optional) -- Function to be called everytime the textarea changes the value.</li>
 <li>
