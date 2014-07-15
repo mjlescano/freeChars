@@ -30,7 +30,7 @@ $('textarea').freeChars({
 })
 ```
 
-## Options
+### Options
 * `maxLength` (Integer)(default: `140`) -- number of characters to count.
 * `limit`:  (Boolean)(default: `true`) -- if it has to apply the limit, if false, negative values will be given to 'available' argument.
 * `onUpdate`: (Function)(optional) -- Function to be called everytime the textarea changes the value.
