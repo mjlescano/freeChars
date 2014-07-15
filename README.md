@@ -3,15 +3,18 @@ Minimal characters counter for textarea/input elements. Also works as a polyfill
 
 ### Usage
 
-Inlcude jQuery (1.9 or newer), requestAnimationFrame Polyfill if you want to be backwards compatible, and `jquery.freeChars.js`.
+Inlcude the scripts:
 
 ```html
+<!-- jQuery (1.9 or newer). -->
 <script type="text/javascript" src="lib/rAF.js"></script>
+<!-- (optional) window.requestAnimationFrame Polyfill for good performance on old browsers. -->
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+<!-- The plugin :D -->
 <script type="text/javascript" src="src/jquery.freeChars.js"></script>
 ```
 
-Then simply call `.freeChars()` to initiate the plugin:
+Then simply call `.freeChars()`:
 
 ```javascript
 $('textarea').freeChars({
@@ -19,12 +22,12 @@ $('textarea').freeChars({
 })
 ```
 
-You could also have a custom handler to be called when the textarea value change, will recieve two arguments, the available characters to be used and the current maxlegth value.
+You could also set a custom handler to be called when the textarea value changes. It will recieve two arguments, the available characters to be used and the current maxlegth value.
 
 ```javascript
 $('textarea').freeChars({
   onUpdate: function(available, maxlength){
-    console.log('There are '+available+'characters left.')
+    console.log('There are '+available+' characters left.')
     console.log('The textarea can only have '+maxlength+' characters.')
   }
 })
