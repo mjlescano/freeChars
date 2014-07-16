@@ -6,8 +6,6 @@ Minimal characters counter for textarea/input elements. Also works as a polyfill
 Inlcude the scripts:
 
 ```html
-<!-- (optional) window.requestAnimationFrame Polyfill for good performance on old browsers. -->
-<script type="text/javascript" src="lib/rAF.js"></script>
 <!-- jQuery (1.9 or newer). -->
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <!-- The plugin :D -->
