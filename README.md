@@ -6,19 +6,19 @@ Minimal characters counter for textarea/input elements. Also works as a polyfill
 Inlcude the scripts:
 
 ```html
-<!-- jQuery (1.9 or newer). -->
-<script type="text/javascript" src="lib/rAF.js"></script>
 <!-- (optional) window.requestAnimationFrame Polyfill for good performance on old browsers. -->
+<script type="text/javascript" src="lib/rAF.js"></script>
+<!-- jQuery (1.9 or newer). -->
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
 <!-- The plugin :D -->
 <script type="text/javascript" src="src/jquery.freeChars.js"></script>
 ```
 
-Then simply call `.freeChars()`:
+Then simply call `.freeChars()` and give it the element you wish to update:
 
 ```javascript
 $('textarea').freeChars({
-  update: $('span#textareaCount')
+  update: $('#textareaCount')
 })
 ```
 
@@ -48,8 +48,7 @@ $('textarea').freeChars({
   <span id="count"></span>
 </p>
 <script type="text/javascript">
-  var $count = $('#count')
-  $('textarea').freeChars({ update: $count })
+  $('textarea').freeChars({ update: $('#count') })
 </script>
 ```
 
